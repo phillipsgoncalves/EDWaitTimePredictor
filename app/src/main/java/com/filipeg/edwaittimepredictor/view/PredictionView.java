@@ -1,5 +1,4 @@
 package com.filipeg.edwaittimepredictor.view;
 
-public interface MainView {
-
+public interface PredictionView {
 }
