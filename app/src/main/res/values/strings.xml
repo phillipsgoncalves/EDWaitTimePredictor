@@ -1,3 +1,6 @@
 <resources>
   <string name="app_name">ED Wait Time Predictor</string>
+  <string name="time_for_prediction">Time for prediction</string>
+  <string name="predict">Predict</string>
+  <string name="predict_button_introduction_message">Press the button bellow to get a waiting time prediction</string>
 </resources>
