@@ -49,6 +49,14 @@
         android:layout_margin="8dp"
         android:timePickerMode="spinner"
         />
+
+    <Button
+        android:id="@+id/submit_time_for_prediction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/submit"
+        />
   </LinearLayout>
 
 
@@ -56,16 +64,18 @@
       android:id="@+id/prediction_calendar_layout"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_margin="8dp"
+      android:layout_margin="32dp"
+      android:orientation="vertical"
       android:visibility="gone"
       >
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:text="@string/time_for_prediction"
+        android:layout_marginBottom="16dp"
+        android:text="@string/date_for_prediction"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         />
 
     <CalendarView
@@ -74,5 +84,14 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         />
+
+    <Button
+        android:id="@+id/submit_date_for_prediction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/submit"
+        />
+
   </LinearLayout>
 </LinearLayout>

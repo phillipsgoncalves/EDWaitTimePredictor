@@ -24,6 +24,7 @@ public class PredictionFragment extends BaseFragment implements PredictionView {
   private CalendarView calendarView;
   private Button predictionButton;
   private TextView predictionIntroMessage;
+  private Button submitTimeButton;
 
   @Override public void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -44,7 +45,7 @@ public class PredictionFragment extends BaseFragment implements PredictionView {
     timePicker = view.findViewById(R.id.prediction_timepicker);
     calendarViewLayout = view.findViewById(R.id.prediction_calendar_layout);
     calendarView = view.findViewById(R.id.prediction_calendar);
-
+    submitTimeButton = view.findViewById(R.id.submit_time_for_prediction);
     attachPresenter(new PredictorPresenter(this));
   }
 
@@ -56,6 +57,7 @@ public class PredictionFragment extends BaseFragment implements PredictionView {
     timePicker = null;
     calendarViewLayout = null;
     calendarView = null;
+    submitTimeButton = null;
   }
 
   @Override public Observable<Void> predictButtonClick() {
@@ -65,6 +67,19 @@ public class PredictionFragment extends BaseFragment implements PredictionView {
   @Override public void showTimePicker() {
     hidePredictionIntroductionView();
     timePickerLayout.setVisibility(View.VISIBLE);
+  }
+
+  @Override public Observable<Void> submitTimeClick() {
+    return RxView.clicks(submitTimeButton);
+  }
+
+  @Override public void showDatePicker() {
+    hideTimePicker();
+    calendarViewLayout.setVisibility(View.VISIBLE);
+  }
+
+  private void hideTimePicker() {
+    timePickerLayout.setVisibility(View.GONE);
   }
 
   private void hidePredictionIntroductionView() {

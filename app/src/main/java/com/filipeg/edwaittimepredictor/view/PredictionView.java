@@ -7,4 +7,7 @@ public interface PredictionView extends View {
 
   void showTimePicker();
 
+  Observable<Void> submitTimeClick();
+
+  void showDatePicker();
 }

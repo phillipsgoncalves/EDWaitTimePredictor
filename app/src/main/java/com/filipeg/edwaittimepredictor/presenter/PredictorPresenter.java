@@ -13,6 +13,18 @@ public class PredictorPresenter implements Presenter {
 
   @Override public void present() {
     handlePredictButtonClick();
+
+    handleSubmitTimeForPredictionButtonClick();
+  }
+
+  private void handleSubmitTimeForPredictionButtonClick() {
+    view.getLifecycleEvent()
+        .filter(event -> event.equals(View.LifecycleEvent.CREATE))
+        .flatMap(__ -> view.submitTimeClick())
+        .doOnNext(__ -> view.showDatePicker())
+        .compose(view.bindUntilEvent(View.LifecycleEvent.DESTROY))
+        .subscribe(created -> {
+        }, Throwable::printStackTrace);
   }
 
   private void handlePredictButtonClick() {

@@ -3,4 +3,6 @@
   <string name="time_for_prediction">Insert the time of the day for the prediction</string>
   <string name="predict">Predict</string>
   <string name="predict_button_introduction_message">Press the button bellow to get a waiting time prediction</string>
+  <string name="submit">Submit</string>
+  <string name="date_for_prediction">Insert the date for the prediction</string>
 </resources>
