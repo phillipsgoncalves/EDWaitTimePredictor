@@ -11,9 +11,11 @@ import android.widget.CalendarView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import com.filipeg.edwaittimepredictor.PredictionInput;
 import com.filipeg.edwaittimepredictor.R;
 import com.filipeg.edwaittimepredictor.presenter.PredictorPresenter;
 import com.jakewharton.rxbinding.view.RxView;
+import java.util.Date;
 import rx.Observable;
 
 public class PredictionFragment extends BaseFragment implements PredictionView {
@@ -25,6 +27,7 @@ public class PredictionFragment extends BaseFragment implements PredictionView {
   private Button predictionButton;
   private TextView predictionIntroMessage;
   private Button submitTimeButton;
+  private Button submitDateButton;
 
   @Override public void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -46,6 +49,7 @@ public class PredictionFragment extends BaseFragment implements PredictionView {
     calendarViewLayout = view.findViewById(R.id.prediction_calendar_layout);
     calendarView = view.findViewById(R.id.prediction_calendar);
     submitTimeButton = view.findViewById(R.id.submit_time_for_prediction);
+    submitTimeButton = view.findViewById(R.id.submit_date_for_prediction);
     attachPresenter(new PredictorPresenter(this));
   }
 
@@ -76,6 +80,13 @@ public class PredictionFragment extends BaseFragment implements PredictionView {
   @Override public void showDatePicker() {
     hideTimePicker();
     calendarViewLayout.setVisibility(View.VISIBLE);
+  }
+
+  @Override public Observable<PredictionInput> submitDateClick() {
+    return RxView.clicks(submitDateButton)
+        .map(
+            __ -> new PredictionInput(new Date(calendarView.getDate()), timePicker.getCurrentHour(),
+                timePicker.getCurrentMinute()));
   }
 
   private void hideTimePicker() {

@@ -1,5 +1,6 @@
 package com.filipeg.edwaittimepredictor.view;
 
+import com.filipeg.edwaittimepredictor.PredictionInput;
 import rx.Observable;
 
 public interface PredictionView extends View {
@@ -10,4 +11,6 @@ public interface PredictionView extends View {
   Observable<Void> submitTimeClick();
 
   void showDatePicker();
+
+  Observable<PredictionInput> submitDateClick();
 }
