@@ -19,7 +19,7 @@ public class PredictorPresenter implements Presenter {
     view.getLifecycleEvent()
         .filter(event -> event.equals(View.LifecycleEvent.CREATE))
         .flatMap(__ -> view.predictButtonClick())
-        .doOnNext(__-> view.showTimePicker())
+        .doOnNext(__ -> view.showTimePicker())
         .compose(view.bindUntilEvent(View.LifecycleEvent.DESTROY))
         .subscribe(created -> {
         }, Throwable::printStackTrace);

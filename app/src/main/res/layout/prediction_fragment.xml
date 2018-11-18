@@ -29,23 +29,25 @@
       android:id="@+id/prediction_time_picker_layout"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_margin="8dp"
+      android:layout_margin="32dp"
+      android:orientation="vertical"
       android:visibility="gone"
       >
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
         android:text="@string/time_for_prediction"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         />
     <TimePicker
-        android:id="@+id/prediction_timestamp"
+        android:id="@+id/prediction_timepicker"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
+        android:timePickerMode="spinner"
         />
   </LinearLayout>
 

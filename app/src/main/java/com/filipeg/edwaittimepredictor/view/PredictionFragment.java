@@ -20,10 +20,10 @@ public class PredictionFragment extends BaseFragment implements PredictionView {
 
   private LinearLayout timePickerLayout;
   private TimePicker timePicker;
+  private LinearLayout calendarViewLayout;
   private CalendarView calendarView;
   private Button predictionButton;
   private TextView predictionIntroMessage;
-  private LinearLayout calendarViewLayout;
 
   @Override public void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -41,7 +41,7 @@ public class PredictionFragment extends BaseFragment implements PredictionView {
     predictionButton = view.findViewById(R.id.button_predict);
     predictionIntroMessage = view.findViewById(R.id.prediction_intro_message);
     timePickerLayout = view.findViewById(R.id.prediction_time_picker_layout);
-    timePicker = view.findViewById(R.id.prediction_timestamp);
+    timePicker = view.findViewById(R.id.prediction_timepicker);
     calendarViewLayout = view.findViewById(R.id.prediction_calendar_layout);
     calendarView = view.findViewById(R.id.prediction_calendar);
 
