@@ -1,4 +1,10 @@
 package com.filipeg.edwaittimepredictor.view;
 
-public interface PredictionView {
+import rx.Observable;
+
+public interface PredictionView extends View {
+  Observable<Void> predictButtonClick();
+
+  void showTimePicker();
+
 }

@@ -7,6 +7,7 @@
     >
 
   <TextView
+      android:id="@+id/prediction_intro_message"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_gravity="center_horizontal"
@@ -25,6 +26,7 @@
       />
 
   <LinearLayout
+      android:id="@+id/prediction_time_picker_layout"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_margin="8dp"
@@ -49,6 +51,7 @@
 
 
   <LinearLayout
+      android:id="@+id/prediction_calendar_layout"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_margin="8dp"
