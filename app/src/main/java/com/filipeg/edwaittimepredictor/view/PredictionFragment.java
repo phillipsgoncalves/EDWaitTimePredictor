@@ -49,7 +49,7 @@ public class PredictionFragment extends BaseFragment implements PredictionView {
     calendarViewLayout = view.findViewById(R.id.prediction_calendar_layout);
     calendarView = view.findViewById(R.id.prediction_calendar);
     submitTimeButton = view.findViewById(R.id.submit_time_for_prediction);
-    submitTimeButton = view.findViewById(R.id.submit_date_for_prediction);
+    submitDateButton = view.findViewById(R.id.submit_date_for_prediction);
     attachPresenter(new PredictorPresenter(this));
   }
 
